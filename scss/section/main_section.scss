@@ -1,0 +1,113 @@
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.logo__link {
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: flex-end;   
+    margin-right: 11px;
+}
+
+.nav__item {
+    display: flex;
+    align-items: center;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.nav__item:hover {
+    text-decoration: underline;
+}
+
+.nav__item:after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 16px;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+.nav__item:last-child::after {
+    display: none;
+}
+
+.button__order {
+    display: inline-block;
+    width: 98px;
+    height: 37px;
+    background-color: #e45028;
+    border-radius: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    vertical-align: middle;
+    border: none;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    transition: 0.5s;
+}
+
+.button__order:hover {
+    background-color: #c1401e;
+    cursor: pointer;
+}
+
+.main {
+    background: url('../img/bg/bg_main.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+.main__subtitle{
+    font-family: 'Lifehack', Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 65px;
+    color: #ffffff;
+    text-transform: lowercase;
+    line-height: 1;
+}
+
+.main__content {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+    margin-left: 16px;
+}
+
+.main__content-title, .main__subtitle {
+    display: flex;
+    flex-basis: 50%;
+    margin-bottom: 16px;
+}
+
+.main__content-text {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 40px;
+}
