@@ -4,8 +4,10 @@
     height: 100%;
 }
 
-.container { 
-    width: 940px;
+.container {
+    width: 95%;
+    max-width: 940px;
+    min-height: 320px;
     height: 100%;
     margin: 0 auto; 
     display: flex;
@@ -16,7 +18,7 @@
 
 .section {
     height: 100%;
-    min-width: 940px;
+    min-width: 320px;
     min-height: 650px;
 }
 
@@ -44,12 +46,12 @@
     z-index: 10;
     position: relative;
     border-radius: 50%;
-    margin-bottom: 5px;
-    
+    margin-bottom: 5px;        
 }
 
-.sidebar__circle--active {
-    border: solid 1px #ffffff;
+.sidebar__item:hover .sidebar__circle, .sidebar__circle--active {
+   border: solid 1px #ffffff;
+   cursor: pointer;
 }
 
 .sibebar__circle-color {

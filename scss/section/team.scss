@@ -1,0 +1,62 @@
+.team {
+    background: url('../img/bg/bg_team.jpg') no-repeat center top;
+    background-size: cover;
+}
+
+.team__wraper {
+    position: absolute;
+    right: 0%;
+    left: 50%;
+    background-color: #313436;
+    opacity: 0.93;
+    height: 100%;
+    padding-top: 113px;
+    padding-left: 95px;
+}
+
+.team-accordeon__title{
+    color:#fff;
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.team-accordeon__descblock {
+    margin-bottom: 17px;
+    display: flex;
+    align-content: flex-start;
+}
+
+.team-accordeon__avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.team-accordeon__desc {
+    width: 45%;
+    color: #ffffff;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-accordeon__position{
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 11px;
+}
+
+.team__content-title {
+    margin-bottom: 36px;
+}
+
+.team-accordeon__text {
+    line-height: 24px;
+}
