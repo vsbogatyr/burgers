@@ -1,0 +1,54 @@
+
+.best {
+    background-image: url('../img/bg/bg_best.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.best__title {
+    color: #2f3234;
+    margin-bottom: 42px;  
+}
+
+.best__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.best__item-title {
+    font-family: 'Lifehack', Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    color: #2f3234;
+    line-height: 1.75rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.best__item-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
+}
+
+.best__icon {
+    height: 5rem;
+}
+
+.best__item-description {
+    text-align: center;
+    color: #2f3234;
+    opacity: 0.8;
+    line-height: 24px;
+}
+
+.best__item {
+    margin: 0 10px;
+    width: 300px;
+}
