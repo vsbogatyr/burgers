@@ -71,11 +71,14 @@ html, body {
   position: relative;
   min-width: 960px; }
 
+.content-wrap {
+  height: 100%;
+  position: relative; }
+
 .container {
   width: 95%;
   max-width: 940px;
-  min-height: 320px;
-  height: 100%;
+  min-width: 320px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,9 +95,12 @@ html, body {
   align-items: center; }
 
 .section {
-  height: 100%;
+  height: 100vh;
   min-width: 320px;
-  min-height: 650px; }
+  min-height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .title {
   font-family: 'Gagalin', Arial, sans-serif;
@@ -633,24 +639,33 @@ p {
   background: url("../img/bg/bg-texture.jpg") no-repeat center center;
   background-size: cover; }
 
+.order__title {
+  margin-bottom: 21px; }
+
 .form {
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-
-.form__col {
-  width: 50%;
-  margin-right: 40px; }
-
-.form__row {
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.form__title {
-  margin-bottom: 7px; }
+  .form__col {
+    width: 50%;
+    margin-right: 18px; }
+  .form__row {
+    margin-bottom: 17px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .form__title {
+    margin-bottom: 7px; }
+  .form__input {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    resize: none; }
+    .form__input:focus {
+      border-color: #f9b43b;
+      outline: none; }
 
 .form__block {
   display: block;
@@ -661,30 +676,45 @@ p {
   .form__block:last-child {
     margin-right: 0; }
 
-.form__input {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  width: 100%; }
+.form__col--right {
+  padding-left: 3px;
+  margin-right: 0px;
+  margin-bottom: 17px; }
 
 .form__text {
-  height: 109px; }
+  height: 109px;
+  margin-bottom: 8px; }
 
 .form__radio {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 17px;
   cursor: pointer;
   position: relative;
   vertical-align: middle; }
+  .form__radio:last-child {
+    margin-right: 0px; }
+  .form__radio-text {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle; }
+
+.form__rbtns {
+  margin-bottom: 25px; }
+
+.form__radio-btn {
+  position: absolute;
+  top: 0px;
+  left: -9999px; }
 
 .form__radio-elem {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
-  border: 1px solid #d0d0d0;
-  position: relative; }
+  background-color: #ffffff;
+  position: relative;
+  display: inline-block; }
 
 .form__radio-elem:after {
   content: "";
@@ -692,19 +722,60 @@ p {
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  background: #4b73b5;
+  background: #e35028;
   width: 0;
   height: 0;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-.form__radio-btn:checked + .form__radio-elem {
-  border: 1px solid #4b73b5; }
-
 .form__radio-btn:checked + .form__radio-elem:after {
   width: 8px;
   height: 8px; }
+
+.form__check {
+  position: relative;
+  display: block;
+  margin-bottom: 17px; }
+  .form__check-text {
+    display: inline-block;
+    margin-left: 4px; }
+
+.form__check-btn {
+  position: absolute;
+  top: 0px;
+  left: -9999px; }
+
+.form__check-elem {
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  position: relative;
+  display: inline-block; }
+
+.form__check-elem:after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.form__check-btn:checked + .form__check-elem:after {
+  background: url("../img/icons/checkmark.png") no-repeat center center; }
+
+.button__clear {
+  display: inline-block;
+  width: 98px;
+  height: 37px;
+  border-radius: 5px;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  color: #ffffff; }
 
 .map {
   width: 100%;
