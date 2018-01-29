@@ -36,8 +36,7 @@
 }
 
 .review__btn {
-    width: rem(110px);
-    height: rem(33px);
+    padding: rem(10px) rem(15px);
     background-color: #2f3234;
     text-transform: uppercase;
     vertical-align: middle;
@@ -50,6 +49,7 @@
     font-size: rem(13px);
     border-radius: rem(5px);
 }
+
 .review__btn:hover {
     background-color: #1f2122;
     cursor: pointer;
@@ -97,9 +97,17 @@
     @include tablets {
         margin-bottom: rem(13px)
     }
+
+    @include phones {
+        font-size: rem(24px);
+    }
 }
 
 .review__text {
     line-height: rem(24px);
     margin-bottom: rem(15px);
+    
+    @include phones {
+        display: none;
+    }
 }

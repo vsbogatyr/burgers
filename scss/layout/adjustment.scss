@@ -27,6 +27,7 @@
     min-width: rem(320px);
     min-height: rem(650px);
     display: flex;
+    overflow: hidden;
 }
 
 .title {
@@ -39,7 +40,7 @@
     margin-bottom: 0;
 
     @include phones {
-        font-size: 63px;
+        font-size: rem(63px);
     }
 }
 
@@ -48,6 +49,10 @@
     position: fixed;
     top: rem(90px);
     right: rem(50px);
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .sidebar__circle {

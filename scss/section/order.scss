@@ -5,6 +5,11 @@
 
 .order__title {
     margin-bottom: rem(21px);
+    text-align: center;
+
+    @include phones {
+        font-size: rem(50px);
+    }
 }
 
 .form {
@@ -18,6 +23,10 @@
         @include tablets {
             width: 66%;
             margin-right: rem(0px);
+        }
+
+        @include phones {
+            width: 95%;
         }
     }
 
@@ -90,6 +99,12 @@
         margin-left: rem(5px);
         vertical-align: middle;
     }       
+}
+
+.form__btns {
+    @include phones {
+        text-align: center;
+    }
 }
 
 .form__rbtns {
