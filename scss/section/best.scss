@@ -9,9 +9,22 @@
     align-content: center;
 }
 
+.best__container {
+
+    @include phones {
+    justify-content: initial;
+    margin-top: rem(92px);
+    }
+}
+
 .best__title {
     color: #2f3234;
-    margin-bottom: rem(42px);  
+    margin-bottom: rem(42px);
+
+    @include phones {
+        font-size: rem(50px);
+        margin-bottom: rem(26px)
+    }
 }
 
 .best__list {
@@ -42,6 +55,7 @@
 
     @include phones {
         text-align: left;
+
     }
 }
 
@@ -72,6 +86,7 @@
 
     @include phones {
         text-align: left;
+        padding-right: rem(10px);
     }
 }
 
@@ -82,6 +97,7 @@
     @include phones {
         display: flex;
         width: 100%;
-        text-align: right;
+        text-align: left;
+        margin-bottom: rem(48px);
     }
 }
