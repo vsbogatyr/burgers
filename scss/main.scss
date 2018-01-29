@@ -2,6 +2,14 @@
 @import "config/variables.scss";
 @import "config/mixins.scss";
 
+//resolutions
+$tablets: 768px;
+$phones: 480px;
+$mini: 320px;
+
+//media
+@import "misc/media.scss";
+
 //base
 @import "layout/font.scss";
 @import "layout/base.scss";

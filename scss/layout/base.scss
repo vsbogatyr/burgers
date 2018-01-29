@@ -8,12 +8,21 @@ ul {
     padding: 0;
     list-style: none;
 }
+html {
+    @include tablets {
+        font-size: 15px;
+    }
+
+    @include phones {
+        font-size: 14px;
+    }
+}
 
 body {
     font-family: 'Ubuntu', Arial, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 14px;
+    font-size: rem(14px);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;

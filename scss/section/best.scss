@@ -11,44 +11,77 @@
 
 .best__title {
     color: #2f3234;
-    margin-bottom: 42px;  
+    margin-bottom: rem(42px);  
 }
 
 .best__list {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+
+    @include phones {
+        flex-direction: column;
+    }
+}
+
+.best__text-block {
+
+   
 }
 
 .best__item-title {
     font-family: 'Lifehack', Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 24px;
+    font-size: rem(24px);
     color: #2f3234;
     line-height: 1.75rem;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
+
+    @include phones {
+        text-align: left;
+    }
 }
 
 .best__item-img {
     display: flex;
     justify-content: center;
-    margin-bottom: 34px;
+    margin-bottom: rem(34px);
+    
+    @include phones {
+        margin-right: rem(25px);
+    }
 }
 
 .best__icon {
     height: 5rem;
+
+    @include phones {
+        width: rem(98px);
+        height: auto;
+    }
 }
 
 .best__item-description {
     text-align: center;
     color: #2f3234;
     opacity: 0.8;
-    line-height: 24px;
+    line-height: rem(24px);
+
+    @include phones {
+        text-align: left;
+    }
 }
 
 .best__item {
-    margin: 0 10px;
-    width: 300px;
+    margin: 0 rem(10px);
+    width: rem(300px);
+
+    @include phones {
+        display: flex;
+        width: 100%;
+        text-align: right;
+    }
 }

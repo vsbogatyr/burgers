@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    min-width: 940px + 20px;
+//    min-width: rem(940px) + rem(20px);
 }
 
 .content-wrap {
@@ -24,8 +24,8 @@
 
 .section {
     height: 100vh;
-    min-width: 320px;
-    min-height: 650px;
+    min-width: rem(320px);
+    min-height: rem(650px);
     display: flex;
 }
 
@@ -33,37 +33,41 @@
     font-family: 'Gagalin', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-size: 72px;
+    font-size: rem(72px);
     color: #f9b43b;
     text-transform: uppercase;
     margin-bottom: 0;
+
+    @include phones {
+        font-size: 63px;
+    }
 }
 
 
 .sidebar {
     position: fixed;
-    top: 90px;
-    right: 50px;
+    top: rem(90px);
+    right: rem(50px);
 }
 
 .sidebar__circle {
-    width: 16px;
-    height: 16px;
-    border: solid 0px #ffffff;
+    width: rem(16px);
+    height: rem(16px);
+    border: solid rem(0px) #ffffff;
     z-index: 10;
     position: relative;
     border-radius: 50%;
-    margin-bottom: 5px;        
+    margin-bottom: rem(5px);        
 }
 
 .sidebar__item:hover .sidebar__circle, .sidebar__circle--active {
-   border: solid 1px #ffffff;
+   border: solid rem(1px) #ffffff;
    cursor: pointer;
 }
 
 .sibebar__circle-color {
-    width: 6px;
-    height: 6px;
+    width: rem(6px);
+    height: rem(6px);
     border-radius: 50%;
     background-color: #ffffff;
     position: absolute;
