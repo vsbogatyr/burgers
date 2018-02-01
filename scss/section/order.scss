@@ -8,7 +8,7 @@
     text-align: center;
 
     @include phones {
-        font-size: rem(50px);
+        font-size: rem(34px);
     }
 }
 
@@ -118,8 +118,8 @@
 }
 
 .form__radio-elem {
-    width: rem(15px);
-    height: rem(15px);
+    width: rem(16px);
+    height: rem(16px);
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
@@ -167,8 +167,8 @@
 }
 
 .form__check-elem {
-    width: rem(15px);
-    height: rem(15px);
+    width: rem(16px);
+    height: rem(16px);
     background-color: #ffffff;
     position: relative;
     display: inline-block;
@@ -176,8 +176,8 @@
 
 .form__check-elem:after {
     content: "";
-    width: rem(15px);
-    height: rem(15px);
+    width: rem(16px);
+    height: rem(16px);
     position: absolute;
     top: 50%;
     left: 50%;
