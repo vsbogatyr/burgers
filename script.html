@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h2 class="title best__title">Мы лучшие</h2>
+        <ul class="best__list">
+            <li class="best__item">
+                <div class="best__item-img">
+                    <img class="best__icon" src="img/content/meat.png" alt="meat">
+                </div>
+                <div class="best__text-block">
+                    <div class="best__item-title">100% свежее мясо</div>
+                    <div class="best__item-description">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</div>
+                </div>
+            </li>
+            <li class="best__item">
+                <div class="best__item-img">
+                    <img class="best__icon" src="img/content/hand.png" alt="meat">
+                </div>
+                <div class="best__text-block">
+                    <div class="best__item-title">Ручная сборка</div>
+                    <div class="best__item-description">
+                        <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие
+                            притягивает сюжетный реформаторский пафос.</p>
+                    </div>
+                </div>
+
+            </li>
+            <li class="best__item">
+                <div class="best__item-img">
+                    <img class="best__icon" src="img/content/natural.png" alt="meat">
+                </div>
+                <div class="best__text-block">
+                    <div class="best__item-title">Натуральные ингридеиенты</div>
+                    <div class="best__item-description">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- <script>
+        const element=document.createElement('div');
+        element.textContent='text within the block';
+        const container=document.querySelector('#container');
+        container.appendChild(element);
+        const element2=document.createElement('div');
+        element.appendChild(element2);
+        element2.classList.add('inner');
+        element2.textContent='this element is also created using the DOM API'
+        element2.style.color='red';
+    </script> -->
+    <!--
+    <script>
+        const element=document.createElement('div');
+        element.textContent='text within the block';
+        const container=document.querySelector('#container');
+        container.appendChild(element);
+        element.addEventListener('click', function(){console.log('Этот текст говорит о том что я все правильно сделал');});
+    </script> -->
+    <!--
+    <script>
+        const element = document.createElement('a');
+        const container = document.querySelector('#container');
+        container.appendChild(element);
+        element.setAttribute('href', 'https://loftschool.ru');
+        element.textContent = 'https://loftschool.ru';
+        element.addEventListener('click', function (event) {
+            event.preventDefault();
+            const HREF = element.getAttribute('href');
+            console.log('Я кликнул на ссылку', HREF);
+        })
+    </script> -->
+
+    <script>
+        const element = document.createElement('input');
+        const container = document.querySelector('#container');
+        container.appendChild(element);
+        const mybtn = document.createElement('button');
+        container.appendChild(mybtn);
+        mybtn.textContent = 'My button';
+        mybtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log(element.value);
+        })
+        
+    </script>
+</body>
+
+</html>
