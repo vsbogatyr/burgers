@@ -1,0 +1,128 @@
+
+.map {
+   width: 100%;
+   height: 100%;
+   position: relative;
+
+}
+
+.map-img {
+    width: 100%;
+    height: 100%;
+   /* position: absolute;
+    left: 0;
+    top: 0;*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.footer {
+    width: 100%;
+    height: rem(60px);
+    background: url('../img/bg/footer.jpg') no-repeat center bottom;
+    background-size: cover;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    right: 0;
+
+    @include phones {
+        height: rem(115px);
+    }
+
+    &__contacts {
+        display: flex;
+        width: 100%;
+
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    }
+
+    &__col {
+        width: 50%;
+
+        @include phones {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+   
+}
+
+/*
+.footer-container {
+    //width: 100%;
+    min-height: rem(60px);
+    align-items: stretch;
+}*/
+
+.contacts {
+    margin-top: rem(7px);
+
+    @include phones {
+        margin-top: rem(19px);
+    }
+}
+
+.address {
+    color: #ffffff;
+    margin-bottom: rem(5px);    
+}
+
+.tel {
+    color: #e45028;
+    font-weight: bold;
+}
+
+.tel:before {
+    content: "";
+    background: url(../img/icons/phone.svg); 
+    display: inline-block;
+    width: rem(11px);
+    height: rem(11px);
+    margin-right: rem(8px);
+}
+
+.social {
+   /* position: absolute;
+    right: 0;
+    top:0;*/
+    padding-top: rem(18px);
+    display: inline-block;
+    text-align: right;
+}
+
+.social__list {
+    text-align: right;
+
+    @include phones {
+        text-align: center;
+    }
+}
+
+.social__link {
+    display: inline-block;
+}
+
+.social__item {
+    display: inline-block;
+    margin-left: rem(16px);
+}
+
+.social__icon {
+    width: rem(20px);
+    height: rem(20px);
+    fill: #ffffff;
+    opacity: .3;
+    transition: opacity .3s;    
+}
+
+.social__icon:hover {
+    opacity: 1;
+}

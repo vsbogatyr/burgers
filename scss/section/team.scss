@@ -1,62 +1,128 @@
 .team {
     background: url('../img/bg/bg_team.jpg') no-repeat center top;
     background-size: cover;
+    position: relative;
 }
 
 .team__wraper {
     position: absolute;
     right: 0%;
+    top: 0%;
+    bottom: 0%;
     left: 50%;
     background-color: #313436;
     opacity: 0.93;
     height: 100%;
-    padding-top: 113px;
-    padding-left: 95px;
+    padding-top: rem(113px);
+    padding-left: rem(95px);
+
+    @include tablets {
+        left: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 0;
+    }
 }
 
-.team-accordeon__title{
+.team-accordeon__title {
     color:#fff;
-    font-size: 14px;
-    margin-bottom: 17px;
+    font-size: rem(14px);
+    margin-bottom: rem(13px);
+    display: inline-block;
+    text-decoration: none;
+
+    @include tablets {
+        font-size: rem(24px);
+    }
+
 }
 
 .team-accordeon__descblock {
-    margin-bottom: 17px;
+    height: 0;
+    overflow: hidden; /*зачем?*/
     display: flex;
     align-content: flex-start;
+    margin-left: rem(17px);
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+        margin-left: rem(0px);
+    }
 }
 
+.team-accordeon__title:before {
+    content: "";
+    display: inline-block;
+    border-top: 0.4375rem solid #f9b43b;
+    border-left: 0.3125rem solid transparent;
+    border-right: 0.3125rem solid transparent;
+    border-bottom: rem(0px) solid transparent;
+    transform: rotate(0deg);
+    transition: .3s;
+ }
+
+ .team-accordeon__item.is-activ .team-accordeon__title:before
+{
+    transform: rotate(-180deg);
+}
+
+.team-accordeon__item.is-activ .team-accordeon__title {
+    color: #f9b43b;
+}
+
+.team-accordeon__item.is-activ .team-accordeon__descblock {
+    height: auto;
+    margin-bottom: rem(40px);
+}
+
+.team-accordeon__item{
+    margin-bottom: rem(19px);
+}
+
+
 .team-accordeon__avatar{
-    height: 100px;
-    width: 100px;
+    height: rem(100px);
+    width: rem(100px);
     border-radius: 50%;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-right: 20px;
-    margin-top: 5px;
+    margin-right: rem(20px);
+    margin-top: rem(5px);
+
+    @include tablets {
+        margin-right: rem(0px);
+        margin-bottom: rem(20px);
+    }
 }
 
 .team-accordeon__desc {
     width: 45%;
     color: #ffffff;
-    line-height: 24px;
+    line-height: rem(24px);
     display: flex;
     flex-direction: column;
+
+    @include tablets {
+        width: 73%;
+    }
 }
 
 .team-accordeon__position{
     font-family: 'Ubuntu';
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 11px;
+    margin-bottom: rem(11px);
 }
 
 .team__content-title {
-    margin-bottom: 36px;
+    margin-bottom: rem(36px);
 }
 
 .team-accordeon__text {
-    line-height: 24px;
+    line-height: rem(24px);
 }

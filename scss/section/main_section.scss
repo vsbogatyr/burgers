@@ -5,13 +5,20 @@
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+    position: relative;
 }
 
 .logo__link {
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: rem(10px);
 }
 
+
+.nav {
+    @include tablets {
+        display: none;
+    }
+}
 .nav__link {
     text-decoration: none;
     color: #ffffff;
@@ -20,7 +27,7 @@
 .nav__list {
     display: flex;
     justify-content: flex-end;   
-    margin-right: 11px;
+    margin-right: rem(11px);
 }
 
 .nav__item {
@@ -29,7 +36,7 @@
     font-family: 'Ubuntu', Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 13px;
+    font-size: rem(13px);
 }
 
 .nav__item:hover {
@@ -39,24 +46,32 @@
 .nav__item:after {
     content: "";
     display: inline-block;
-    width: 4px;
-    height: 4px;
+    width: rem(4px);
+    height: rem(4px);
     background-color: #ffffff;
     border-radius: 50%;
-    margin-right: 16px;
-    margin-left: 16px;
+    margin-right: rem(16px);
+    margin-left: rem(16px);
     vertical-align: middle;
 }
 .nav__item:last-child::after {
     display: none;
 }
 
+.button {
+    @include tablets {
+        position: absolute;
+        top: rem(25px);
+        right: rem(81px);        
+    }
+}
+
 .button__order {
     display: inline-block;
-    width: 98px;
-    height: 37px;
+    width: rem(98px);
+    height: rem(37px);
     background-color: #e45028;
-    border-radius: 5px;
+    border-radius: rem(5px);
     color: #ffffff;
     text-transform: uppercase;
     vertical-align: middle;
@@ -64,7 +79,7 @@
     font-family: 'Ubuntu', Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 13px;
+    font-size: rem(13px);
     transition: 0.5s;
 }
 
@@ -73,23 +88,61 @@
     cursor: pointer;
 }
 
+.hamburger-menu-link {  
+    box-shadow: 0 rem(5px) #ffffff,0 rem(10px) #ffffff;
+    position: absolute;
+    width: rem(24px);
+    height: rem(4px);
+    background: #ffffff;
+    top: rem(35px);
+    right: rem(30px);
+    border-radius: rem(10px);
+    display: none;
+}
+
+.hamburger-menu-link {
+    @include tablets {
+        display: initial;     
+    }
+}
+
 .main {
     background: url('../img/bg/bg_main.jpg') no-repeat center center;
     background-size: cover;
 }
 
+
+
 .main__subtitle{
     font-family: 'Lifehack', Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 65px;
+    font-size: rem(65px);
     color: #ffffff;
     text-transform: lowercase;
     line-height: 1;
+
+    @include tablets {
+       padding: 0 7%;    
+    }
+
+    @include phones {
+        font-size: rem(54px);     
+    }
+    
 }
 
 .main__content-burger {
     width: 50%;
+
+    @include tablets {
+        width: 100%;
+        text-align: center;        
+    }
+
+    @include phones {
+        margin-bottom: rem(30px);        
+    }
 }
 
 .main__content {
@@ -98,32 +151,52 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding-bottom: 60px;
-    margin-left: 16px;
+    padding-bottom: rem(60px);
+    margin-left: rem(16px);
+
+    @include tablets {
+        flex-direction: column;
+        margin-left: rem(0px);
+    }
+
+    @include phones {
+        margin-left: rem(0px);       
+    }
 }
 
 .main__content-img {
     max-height: 100%;
     max-width: 100%;
-}
 
+    @include phones {
+        max-width: 80%;        
+    }
+}
+/*
 .main__content-title, .main__subtitle {
     display: flex;
     flex-basis: 50%;
-    margin-bottom: 16px;
+    margin-bottom: rem(16px);
 }
-
+*/
 .main__content-text {
     flex-direction: column;
     justify-content: center;
-    margin-left: 10px;
-    margin-top: 40px;
+    margin-left: rem(10px);
+    margin-top: rem(40px);
     width: 50%;
+
+    @include tablets {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        margin-top: rem(0px);
+    }
 }
 
 .down {
     position: absolute;
-    bottom: 40px;
+    bottom: rem(40px);
 }
 
 .down__btn {
