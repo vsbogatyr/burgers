@@ -54,6 +54,7 @@
     margin-left: rem(16px);
     vertical-align: middle;
 }
+
 .nav__item:last-child::after {
     display: none;
 }
@@ -237,6 +238,8 @@
 
 .overlay {
     position: absolute;
+    display: none;
+
     &-menu__link {
         text-decoration: none;
         font-family: 'Ubuntu', Arial, sans-serif;

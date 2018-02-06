@@ -175,6 +175,7 @@
     position: absolute;
     top: 0;
     left: 0;
+   // transition: 0.5s;
 
     @include tablets {
         left: 16.5%;
@@ -200,6 +201,100 @@
         color: #ffffff;
     }
     
+    &__menu {
+        display: flex;
+        left: 100%;
+        top: 0;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+        opacity: 0;
+        border-radius: rem(5px);
+        width: rem(270px);
+        transition: opacity 0.3s;
+
+        &-link-close {
+            display: none;
+            z-index: 10;
+
+            @include tablets {
+                display: initial;              
+            }
+
+            @include phones {
+                display: initial;                
+            }
+        }
+
+        @include tablets {
+            width: rem(322px);            
+        }
+    
+        @include phones {
+            width: auto;            
+        }
+
+        &-close {
+            position: absolute;
+            opacity: 1;
+            top: rem(21px);
+            right: rem(21px);
+
+        }
+
+        &-list {
+            width: 100%;
+            padding: 20px;
+
+            @include tablets {
+                padding-right: rem(70px);
+            }
+        
+            @include phones {
+                padding-right: rem(120px);
+            }                        
+        }
+
+        &-item {
+            margin-bottom: rem(18px);
+            &:last-child {
+                margin-bottom: 0;
+            }                   
+        }
+        
+        &-link {
+            display: flex;
+            align-items: center;                    
+            width: 100%;
+            text-decoration: none;
+            color: #2f3234;              
+        }
+        
+        &-title {
+            font-family: 'Ubuntu';
+            font-weight: 500;
+            font-style: normal;
+            font-size: rem(14px);
+            margin-left: rem(20px);      
+        }
+
+        &-price {
+            font-family: 'Ubuntu';
+            font-weight: 300;
+            font-style: normal;
+            font-size: rem(14px); 
+            margin-left: auto;     
+        }      
+    
+    }
+      
+}
+
+.composition__menu.composition__menu--active {
+    opacity: 1;
+}
+
+.composition.composition__menu--active {
+    background-color: #e35028;
 }
 
 .energy {

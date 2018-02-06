@@ -414,7 +414,8 @@ p {
   clear: both; }
 
 .overlay {
-  position: absolute; }
+  position: absolute;
+  display: none; }
   .overlay-menu__link {
     text-decoration: none;
     font-family: 'Ubuntu', Arial, sans-serif;
@@ -724,6 +725,81 @@ p {
     font-style: normal;
     font-display: optional;
     color: #ffffff; }
+  .composition__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 100%;
+    top: 0;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    border-radius: 0.3125rem;
+    width: 16.875rem;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .composition__menu-link-close {
+      display: none;
+      z-index: 10; }
+      @media screen and (max-width: 768px) {
+        .composition__menu-link-close {
+          display: initial; } }
+      @media screen and (max-width: 480px) {
+        .composition__menu-link-close {
+          display: initial; } }
+    @media screen and (max-width: 768px) {
+      .composition__menu {
+        width: 20.125rem; } }
+    @media screen and (max-width: 480px) {
+      .composition__menu {
+        width: auto; } }
+    .composition__menu-close {
+      position: absolute;
+      opacity: 1;
+      top: 1.3125rem;
+      right: 1.3125rem; }
+    .composition__menu-list {
+      width: 100%;
+      padding: 20px; }
+      @media screen and (max-width: 768px) {
+        .composition__menu-list {
+          padding-right: 4.375rem; } }
+      @media screen and (max-width: 480px) {
+        .composition__menu-list {
+          padding-right: 7.5rem; } }
+    .composition__menu-item {
+      margin-bottom: 1.125rem; }
+      .composition__menu-item:last-child {
+        margin-bottom: 0; }
+    .composition__menu-link {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      text-decoration: none;
+      color: #2f3234; }
+    .composition__menu-title {
+      font-family: 'Ubuntu';
+      font-weight: 500;
+      font-style: normal;
+      font-size: 0.875rem;
+      margin-left: 1.25rem; }
+    .composition__menu-price {
+      font-family: 'Ubuntu';
+      font-weight: 300;
+      font-style: normal;
+      font-size: 0.875rem;
+      margin-left: auto; }
+
+.composition__menu.composition__menu--active {
+  opacity: 1; }
+
+.composition.composition__menu--active {
+  background-color: #e35028; }
 
 .energy {
   width: 3.75rem;
