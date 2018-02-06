@@ -31,6 +31,7 @@ const linkList = document.querySelector('.overlay-menu__list');
 const composition = document.querySelector('.composition');
 const compositionMenu = document.querySelector('.composition__menu');
 const compositionMenuList = document.querySelector('.composition__menu-list');
+const compositionClose = document.querySelector('.composition__menu-link-close');
 
 function toogleMenu() {
     
@@ -39,7 +40,7 @@ function toogleMenu() {
     hamburgerMenuLink.classList.toggle('hamburger-menu-link--clear');
 }
 
-function compMenu() {    
+function menuOpen() {    
     compositionMenu.classList.add('composition__menu--active');
     composition.classList.add('composition__menu--active');
 }
@@ -50,7 +51,7 @@ function menuRemove() {
 }
 
 composition.addEventListener('mouseover', function() {
-    compMenu();
+    menuOpen();
     console.log('работает');
 })
 
@@ -78,5 +79,8 @@ linkList.addEventListener('click', function(e){
 
 compositionMenuList.addEventListener('click', function(event){
     event.preventDefault();
-    
+})
+compositionClose.addEventListener('click', function(event){
+    event.preventDefault();
+    menuRemove();
 })
