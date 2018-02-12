@@ -71,7 +71,9 @@ body {
 
 html, body {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  padding: 0;
+  margin: 0; }
 
 .locked {
   overflow: hidden; }
@@ -79,11 +81,17 @@ html, body {
 .wrapper {
   width: 100%;
   height: 100%;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .content-wrap {
   height: 100%;
-  position: relative; }
+  width: 100%;
+  position: relative;
+  top: 0%;
+  -webkit-transition: top 1s;
+  -o-transition: top 1s;
+  transition: top 1s; }
 
 .container {
   width: 95%;
@@ -1068,6 +1076,36 @@ p {
 .menu-accordeon__content {
   width: 100%;
   color: #ffffff; }
+
+.reviews {
+  position: relative; }
+  .reviews__overlay {
+    background: rgba(47, 50, 52, 0.9);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .reviews__overlay-container {
+      width: 28.75rem;
+      background: #ffffff;
+      position: relative;
+      border-radius: 0.3125rem;
+      padding: 1.875rem 1.25rem; }
+    .reviews__overlay-close {
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+    .reviews__overlay-title.review__name {
+      color: #2f3234; }
 
 .reviews__list {
   width: 100%;

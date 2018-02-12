@@ -191,31 +191,36 @@ var
     screen = 0,
     contentWrap = $('.content-wrap'),
     section = $('.section'),
-    inscroll = false;
-$('.section:first-child').addClass('active');
-
+    inscroll = false,
+    sidebarElem = $('.sidebar__circle');
 $(document).ready(function () {
     $('body').on('mousewheel', function (event) {
-        var activeSection = section.filter('.active');
+        var activeSection = section.filter('.is-activ');        
         if (!inscroll) {
             inscroll = true;
             if (event.originalEvent.deltaY > 0) {
-                screen++;
-                console.log(screen);
-            } else {
+                if (activeSection.next().length){
+                    screen++;
+                    console.log(screen);
+                    sidebarElem.eq(screen).addClass('sidebar__circle--active');
+                    sidebarElem.eq(screen-1).removeClass('sidebar__circle--active');
+                }                                              
+            }else {
+                if (activeSection.prev().length){                    
                 screen--;
                 console.log(screen);
-            }
+                sidebarElem.eq(screen).addClass('sidebar__circle--active');
+                sidebarElem.eq(screen+1).removeClass('sidebar__circle--active');
+                }
+            }       
         }
-
         var
         position = (-screen * 100) + '%';
         console.log(position);
         contentWrap.css('top', position);
         setTimeout(function () {
             inscroll = false;
-        }, 1300);
+        }, 1300);      
+        section.eq(screen).addClass('is-activ').siblings().removeClass('is-activ');        
     });
 });
-
-
