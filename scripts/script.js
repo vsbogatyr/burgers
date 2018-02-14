@@ -28,8 +28,8 @@ const closebtn = document.querySelector('.overlay-close');
 const wrapper = document.querySelector('.wrapper');
 const hamburgerMenuLink = document.querySelector('.hamburger-menu-link');
 const linkList = document.querySelector('.overlay-menu__list');
-const composition = document.querySelector('.composition');
-const compositionMenu = document.querySelector('.composition__menu');
+var composition = document.querySelectorAll('.composition');
+const compositionMenu = document.querySelectorAll('.composition__menu');
 const compositionMenuList = document.querySelector('.composition__menu-list');
 const compositionClose = document.querySelector('.composition__menu-link-close');
 const accordeonList = document.querySelector('.menu-accordeon__list');
@@ -44,6 +44,7 @@ var reviewName = document.querySelectorAll('.review__name');
 var reviewText = document.querySelectorAll('.review__text');
 const reviewsOverlayClose = document.querySelector('.reviews__overlay-close');
 var slidePrew = document.querySelector('.slider__control-link--left');
+const sliderItem = document.querySelectorAll('.slider__item');
 
 //Полноэкранное меню
 
@@ -72,27 +73,35 @@ linkList.addEventListener('click', function (e) {
 })
 
 //DropDawn Состав
-
 function menuOpen() {
-    compositionMenu.classList.add('composition__menu--active');
-    composition.classList.add('composition__menu--active');
+    for (var i = 0; i < sliderItem.length; i++) {
+        compositionMenu[i].classList.add('composition__menu--active');
+        composition[i].classList.add('composition__menu--active');
+    }
+
 }
 
 function menuRemove() {
-    compositionMenu.classList.remove('composition__menu--active');
-    composition.classList.remove('composition__menu--active');
+    for (var i = 0; i < sliderItem.length; i++) {
+        compositionMenu[i].classList.remove('composition__menu--active');
+        composition[i].classList.remove('composition__menu--active');
+    }
+
 }
 
-composition.addEventListener('mouseover', function () {
-    menuOpen();
-    console.log('работает');
-})
+for (var i = 0; i < sliderItem.length; i++) {
+    composition[i].addEventListener('mouseover', function () {
+        menuOpen();
+        console.log('работает');
+    })
+}
 
-composition.addEventListener('mouseout', function () {
-    menuRemove();
-    console.log('мышь ушла');
-})
-
+for (var i = 0; i < sliderItem.length; i++) {
+    composition[i].addEventListener('mouseout', function () {
+        menuRemove();
+        console.log('мышь ушла');
+    });
+}
 
 compositionMenuList.addEventListener('click', function (event) {
     event.preventDefault();
@@ -195,32 +204,32 @@ var
     sidebarElem = $('.sidebar__circle');
 $(document).ready(function () {
     $('body').on('mousewheel', function (event) {
-        var activeSection = section.filter('.is-activ');        
+        var activeSection = section.filter('.is-activ');
         if (!inscroll) {
             inscroll = true;
             if (event.originalEvent.deltaY > 0) {
-                if (activeSection.next().length){
+                if (activeSection.next().length) {
                     screen++;
                     console.log(screen);
                     sidebarElem.eq(screen).addClass('sidebar__circle--active');
-                    sidebarElem.eq(screen-1).removeClass('sidebar__circle--active');
-                }                                              
-            }else {
-                if (activeSection.prev().length){                    
-                screen--;
-                console.log(screen);
-                sidebarElem.eq(screen).addClass('sidebar__circle--active');
-                sidebarElem.eq(screen+1).removeClass('sidebar__circle--active');
+                    sidebarElem.eq(screen - 1).removeClass('sidebar__circle--active');
                 }
-            }       
+            } else {
+                if (activeSection.prev().length) {
+                    screen--;
+                    console.log(screen);
+                    sidebarElem.eq(screen).addClass('sidebar__circle--active');
+                    sidebarElem.eq(screen + 1).removeClass('sidebar__circle--active');
+                }
+            }
         }
         var
-        position = (-screen * 100) + '%';
+            position = (-screen * 100) + '%';
         console.log(position);
         contentWrap.css('top', position);
         setTimeout(function () {
             inscroll = false;
-        }, 1300);      
-        section.eq(screen).addClass('is-activ').siblings().removeClass('is-activ');        
+        }, 1300);
+        section.eq(screen).addClass('is-activ').siblings().removeClass('is-activ');
     });
 });
