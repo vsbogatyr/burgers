@@ -330,26 +330,42 @@ if (isMobile) {
     });
 }
 
+//AJAX
 
+//console.log('in common.js');
+//console.log($);
 
+$('#form').on('submit', submitForm);
 
+function submitForm (ev) {
+    //console.log('in SubmitForm');
+    ev.preventDefault();
 
-///////
-/*for (var i = 0; i < accordeonSwith.length; i++) {
-    accordeonSwith[i].addEventListener('click', function (event) {
-        event.preventDefault();
-        if (!(this.parentNode.classList.contains('activ'))) {
-            for (var i = 0; i < accordeonSwith.length; i++) {
-                accordeonSwith[i].parentNode.classList.remove('activ');
-                accordeonSwith[i].classList.add('hidden');
-            }
-            this.classList.remove('hidden');
-            this.parentNode.classList.add('activ');
-        } else {
-            for (var i = 0; i < accordeonSwith.length; i++) {
-                accordeonSwith[i].parentNode.classList.remove('activ');
-                accordeonSwith[i].classList.remove('hidden');
-            }
-        }
+    var form = $(ev.target),
+        data = form.serialize();
+        url = form.attr('action');
+        type = form.attr('method');
+
+    var request = $.ajax({
+        type: type,
+        url: url,
+        dataType: 'JSON',
+        data: data
+    });
+
+   /* request.done(function(msg) {
+        const status = msg.status
+        if (status === true) {
+            form.append('верно');
+        } else{
+            form.append('ошибка');
+        } 
     })
-}*/
+
+    request.fail(function(jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });*/
+
+};
+
+

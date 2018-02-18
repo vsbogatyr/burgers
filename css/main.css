@@ -1251,7 +1251,50 @@ p {
 
 .order {
   background: url("../img/bg/bg-texture.jpg") no-repeat center center;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+  .order__modal {
+    background: rgba(47, 50, 52, 0.9);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .order__modal-container {
+    width: 12.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background: #ffffff;
+    position: absolute;
+    border-radius: 0.3125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50% -50%);
+    -ms-transform: translate(-50% -50%);
+    transform: translate(-50% -50%); }
+  .order__modal-text {
+    margin-bottom: 0.9375rem; }
 
 .order__title {
   margin-bottom: 1.3125rem;

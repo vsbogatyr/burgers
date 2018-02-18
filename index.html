@@ -1108,51 +1108,57 @@
                 </ul>
             </section>
             <section class="section order">
+                <div class="order__modal" id="succes">
+                    <div class="order__modal-container">                        
+                        <div class="order__modal-text">Сообщение отправленно</div>
+                        <button class="order__modal-button button__order">Закрыть</button>
+                    </div>
+                </div>
                 <div class="container order__container">
                     <div class="title order__title">
                         Закажите доставку
                     </div>
-                    <form action="server.php" method="post" class="form">
+                    <form action="server.php" method="post" class="form" id="form">
                         <div class="form__col">
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__title"> Имя
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-name" required>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__title"> Телефон
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="tel" class="form__input" name="user-phone" required>
                                 </label>
                             </div>
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__title"> Улица
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-street" required>
                                 </label>
                             </div>
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__title"> Дом
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-house" required>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__title"> Корпус
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-house-housing" required>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__title">Квартира
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-house-apartment" required>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__title"> Этаж
                                     </div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" name="user-house-floor" required>
                                 </label>
                             </div>
                         </div>
@@ -1160,7 +1166,7 @@
                         <div class="form__col form__col--right">
                             <label class="form__textarea ">
                                 <div class="form__title">Комментарий</div>
-                                <textarea name class="form__text form__input"></textarea>
+                                <textarea name class="form__text form__input" name="comment"></textarea>
                             </label>
                             <div class="form__btns">
                                 <div class="form__rbtns">
@@ -1177,13 +1183,13 @@
                                 </div>
 
                                 <label class="form__check">
-                                    <input class="form__check-btn" type="checkbox">
+                                    <input class="form__check-btn" type="checkbox" name="dont-disturb" value="1">
                                     <div class="form__check-elem">
                                     </div>
                                     <div class="form__check-text">Не перезванивать</div>
                                 </label>
                                 <div class="form__buttons">
-                                    <button class="button__order" type="button">Заказать</button>
+                                    <button class="button__order" type="submit">Заказать</button>
                                     <button class="button__clear" type="button">Очиcтить</button>
                                 </div>
                             </div>
@@ -1311,7 +1317,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
             <script src="scripts/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
             <script src="scripts/script.js"></script>
 
