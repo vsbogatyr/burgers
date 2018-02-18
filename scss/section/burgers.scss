@@ -8,6 +8,16 @@
     color: #ffffff;
     //position: absolute;
     //top: rem(54px);
+
+    @include phones {
+        font-size: rem(47px);
+        padding: 0 rem(60px);
+    }
+
+    @include mini {
+        font-size: rem(47px);
+        padding: 0;
+    }
    
 }
 
@@ -32,6 +42,8 @@
         width: rem(32px);        
         transform: translateY(-50%);
         top: 50%;
+        z-index: 10;
+
         
         &--left {
             left: rem(-35px);
@@ -90,11 +102,19 @@
             justify-content: center;
             align-items: center;
             margin-bottom: rem(35px);
+        }       
+        
+        @include mini {
+           margin-bottom: rem(16px);
         }        
     }
 
     &__burger-icon {
         max-width: 98%;
+        
+        @include tablets {
+            max-width: 70%;
+        }
     }
 
     &__right {
@@ -128,6 +148,12 @@
             margin-bottom: rem(40px);
             text-align: center;
         }
+        
+        @include  mini {
+            margin-top: rem(16px);
+            margin-bottom: rem(16px);
+        }
+
     }
 
     &__price-block {
@@ -203,13 +229,13 @@
     
     &__menu {
         display: flex;
-        left: 100%;
+        left: 9999px;
         top: 0;
         position: absolute;
         background: rgba(255, 255, 255, 0.9);
-        opacity: 0;
         border-radius: rem(5px);
         width: rem(270px);
+        opacity: 0;
         transition: opacity 0.3s;
 
         &-link-close {
@@ -236,6 +262,7 @@
         &-close {
             position: absolute;
             opacity: 1;
+            width: rem(18px) !important;
             top: rem(21px);
             right: rem(21px);
 
@@ -251,7 +278,11 @@
         
             @include phones {
                 padding-right: rem(120px);
-            }                        
+            }
+            
+            @include mini {
+                padding-right: rem(63px);
+            }         
         }
 
         &-item {
@@ -290,6 +321,7 @@
 }
 
 .composition__menu.composition__menu--active {
+    left: 100%;
     opacity: 1;
 }
 

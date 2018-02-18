@@ -104,8 +104,8 @@
 
 .hamburger-menu-link {
     position: absolute;
-    top: 30px;
-    right: 36px;
+    top: rem(30px);
+    right: rem(36px);
     bottom: auto;
     left: auto;
     display: none;
@@ -141,6 +141,9 @@
         font-size: rem(54px);     
     }
     
+    @include mini {
+        font-size: rem(35px);     
+    }
 }
 
 .main__content-burger {
@@ -183,13 +186,13 @@
         max-width: 80%;        
     }
 }
-/*
-.main__content-title, .main__subtitle {
-    display: flex;
-    flex-basis: 50%;
-    margin-bottom: rem(16px);
+
+.main__content-title {
+    @include mini {
+        font-size: rem(48px);     
+    }    
 }
-*/
+
 .main__content-text {
     flex-direction: column;
     justify-content: center;

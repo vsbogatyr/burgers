@@ -46,6 +46,13 @@ const reviewsOverlayClose = document.querySelector('.reviews__overlay-close');
 var slidePrew = document.querySelector('.slider__control-link--left');
 const sliderItem = document.querySelectorAll('.slider__item');
 
+/*
+//Точки
+const setActiveMenuItem = itemEq => {
+    $('.sidebar__circle').eq(itemEq).addClass('sidebar__circle--active')
+    .siblings().removeClass('sidebar__circle--active')
+}*/
+
 //Полноэкранное меню
 
 function toogleMenu() {
@@ -144,11 +151,14 @@ for (var i = 0; i < accordeonSwith.length; i++) {
         if (!(this.parentNode.classList.contains('activ'))) {
             for (var i = 0; i < accordeonSwith.length; i++) {
                 accordeonSwith[i].parentNode.classList.remove('activ');
+                accordeonSwith[i].classList.add('hidden');
             }
+            this.classList.remove('hidden');
             this.parentNode.classList.add('activ');
         } else {
             for (var i = 0; i < accordeonSwith.length; i++) {
                 accordeonSwith[i].parentNode.classList.remove('activ');
+                accordeonSwith[i].classList.remove('hidden');
             }
         }
     })
@@ -156,12 +166,13 @@ for (var i = 0; i < accordeonSwith.length; i++) {
 
 //Отзывы
 
-for (var i = 0; i < moreBtn.length; i++) {
-    moreBtn[i].addEventListener('click', function () {
+var reviewsList = document.querySelector('.reviews__list');
+reviewsList.addEventListener('click', function (e) {
+    target = e.target;
+    if (target.className === 'review__btn') {
         reviewsOverlay.style.display = "flex";
-
-    })
-}
+    }
+})
 
 reviewsOverlayClose.addEventListener('click', function (event) {
     event.preventDefault();
@@ -196,13 +207,15 @@ $(document).ready(function () {
 });
 
 //OPS
-var
-    screen = 0,
+
+/*
+var screen = 0,
     contentWrap = $('.content-wrap'),
     section = $('.section'),
     inscroll = false,
     sidebarElem = $('.sidebar__circle');
 $(document).ready(function () {
+
     $('body').on('mousewheel', function (event) {
         var activeSection = section.filter('.is-activ');
         if (!inscroll) {
@@ -223,13 +236,120 @@ $(document).ready(function () {
                 }
             }
         }
-        var
-            position = (-screen * 100) + '%';
+        
+        const position = (-screen * 100) + '%';
         console.log(position);
         contentWrap.css('top', position);
         setTimeout(function () {
             inscroll = false;
         }, 1300);
         section.eq(screen).addClass('is-activ').siblings().removeClass('is-activ');
+        //setActiveMenuItem();  
     });
-});
+
+    //Навигация
+    $('[data-scroll-to]').on('click', e => {
+        e.preventDefault();
+        const target = $(e.currentTarget).attr('data-scroll-to');
+        const position = (-target * 100) + '%';
+        contentWrap.css('top', position);
+        section.eq(target).addClass('is-activ').siblings().removeClass('is-activ');
+        console.log(target);       
+    })  
+});*/
+
+const section = $('.section');
+const display = $('.content-wrap');
+let inscroll = false;
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+
+const sidebarElem = itemEq => {
+    $('.sidebar__item').eq(itemEq).addClass('active')
+        .siblings().removeClass('active');
+}
+
+const navigation = sectionEq => {
+    const position = `${-sectionEq * 100}%`
+
+    if (inscroll) return;
+    inscroll = true;
+
+    section.eq(sectionEq).addClass('is-activ')
+        .siblings().removeClass('is-activ');
+
+    display.css('top', position);
+
+    sidebarElem(sectionEq);
+
+    setTimeout(() => {
+        inscroll = false;
+
+    }, 1300);
+}
+
+const scrollToSection = direction => {
+    const activeSection = section.filter('.is-activ');
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
+
+    if (direction === 'up' && nextSection.length) {
+        navigation(nextSection.index());
+    }
+
+    if (direction === 'down' && prevSection.length) {
+        navigation(prevSection.index());
+    }
+}
+
+$(document).on('wheel', e => {
+    const deltaY = e.originalEvent.deltaY;
+    if (deltaY > 0) {
+        scrollToSection('up');
+    }
+
+    if (deltaY < 0) {
+        scrollToSection('down');
+    }
+
+    touchmove: e => preventDefault();
+})
+
+$('[data-scroll-to]').on('click', e => {
+
+    e.preventDefault();
+    const target = $(e.currentTarget).attr('data-scroll-to');
+    navigation(target);
+})
+
+if (isMobile) {
+    $(document).swipe({
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            scrollToSection(direction);
+        }
+    });
+}
+
+
+
+
+
+///////
+/*for (var i = 0; i < accordeonSwith.length; i++) {
+    accordeonSwith[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        if (!(this.parentNode.classList.contains('activ'))) {
+            for (var i = 0; i < accordeonSwith.length; i++) {
+                accordeonSwith[i].parentNode.classList.remove('activ');
+                accordeonSwith[i].classList.add('hidden');
+            }
+            this.classList.remove('hidden');
+            this.parentNode.classList.add('activ');
+        } else {
+            for (var i = 0; i < accordeonSwith.length; i++) {
+                accordeonSwith[i].parentNode.classList.remove('activ');
+                accordeonSwith[i].classList.remove('hidden');
+            }
+        }
+    })
+}*/

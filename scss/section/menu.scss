@@ -43,7 +43,11 @@
     align-items: flex-end;
     text-decoration: none;
     position: relative;
-    float: left;    
+    float: left; 
+
+    @include tablets {
+        width: rem(50px);
+    }         
 }
 
 .menu-accordeon__swith:before {
@@ -87,6 +91,18 @@
     @include phones {
         width: 100%;
     }
+
+    @include tablets {
+        width: 100%;
+    }
+
+}
+
+.hidden {
+    @include tablets {
+        display: none;
+    }
+   
 }
 
 .menu-accordeon__content {
