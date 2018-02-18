@@ -42,12 +42,12 @@
                                     <a href="#" class="nav__link" data-scroll-to="5">Отзывы</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link" data-scroll-to="6">Контакты</a>
+                                    <a href="#" class="nav__link" data-scroll-to="7">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
                         <div class="button">
-                            <button class="button__order" type="button">Заказать</button>
+                            <button class="button__order" type="button" data-scroll-to="6">Заказать</button>
                         </div>
                         <a class="hamburger-menu-link" id="openMenu">
                             <img class="openbtn" src="img/icons/open.png" alt="open">
@@ -1166,7 +1166,7 @@
                         <div class="form__col form__col--right">
                             <label class="form__textarea ">
                                 <div class="form__title">Комментарий</div>
-                                <textarea name class="form__text form__input" name="comment"></textarea>
+                                <textarea class="form__text form__input" name="comment"></textarea>
                             </label>
                             <div class="form__btns">
                                 <div class="form__rbtns">
@@ -1198,8 +1198,9 @@
                 </div>
             </section>
             <section class="section map">
-                <div class="map-img" style="background-image: url(img/bg/map.jpg)">
-                </div>
+                <div class="yamap" id="map"></div>
+               <!--  <div class="map-img" style="background-image: url(img/bg/map.jpg)">
+                </div> -->
                 <footer class="footer">
                     <div class="container footer-container">
                         <div class="footer__contacts">
@@ -1308,7 +1309,7 @@
                             <a class="overlay-menu__link" href="" data-scroll-to="5">Отзывы</a>
                         </li>
                         <li class="overlay-menu__item">
-                            <a class="overlay-menu__link" href="" data-scroll-to="6">Контакты</a>
+                            <a class="overlay-menu__link" href="" data-scroll-to="7">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -1316,10 +1317,13 @@
             <script src="scripts/jquery-3.3.1.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
             <script src="scripts/jquery.min.js"></script>
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+            </script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
             <script src="scripts/script.js"></script>
+           
 
 </body>
 

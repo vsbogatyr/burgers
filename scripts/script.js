@@ -331,9 +331,10 @@ if (isMobile) {
 }
 
 //AJAX
-
 //console.log('in common.js');
 //console.log($);
+
+var orderModal = document.querySelector('.order__modal');
 
 $('#form').on('submit', submitForm);
 
@@ -353,19 +354,72 @@ function submitForm (ev) {
         data: data
     });
 
-   /* request.done(function(msg) {
-        const status = msg.status
-        if (status === true) {
-            form.append('верно');
-        } else{
-            form.append('ошибка');
-        } 
-    })
-
+    request.done(function(msg) {
+        var mes = msg.mes,
+            status = msg.status;
+        
+        if (status === 'OK') {
+            alert(mes);
+        }else{
+            alert(mes);
+        }
+    });/*
     request.fail(function(jqXHR, textStatus) {
         alert("Request failed: " + textStatus);
     });*/
 
 };
 
+ymaps.ready(init);
+function init() {
+    var map = new ymaps.Map("map", {
+        center: [59.91817154, 30.30557800],
+        zoom: 13,
+        controls: ["zoomControl"],
+        behaviors: ["drag"]
+    });
+    placemarks.forEach(function(item) {
+        var placemark = new ymaps.Placemark(
+            [item.latitude, item.longitude],
+            {
+                hintContent: item.hintContent,
+                balloonContent: item.balloonContent
+            },
+            {
+                iconLayout:"default#image",
+                iconImageHref: "../img/icons/map-marker.png",
+                iconImageSize: [46, 57],
+                iconImageOffset: [-23, -57]
+            });
+            map.geoObjects.add(placemark);       
+    });
+}
 
+var placemarks = [
+    {
+      latitude: 59.94587978, 
+      longitude: 30.36882832,
+      hintContent: "Mr.Burger",
+      balloonContent: "Таврический переулок, 2"
+    },
+    {
+      latitude: 59.92817677,
+      longitude:  30.34624412,
+      hintContent: "Mr.Burger",
+      balloonContent: "Достоевская, 23"
+    },
+    {
+      latitude: 59.92904377, 
+      longitude: 30.35684421,
+      hintContent: "Mr.Burger",
+      balloonContent: "Пушкинский сквер"
+    },
+
+    {
+        latitude: 59.90810447, 
+        longitude: 30.29904974 ,
+        hintContent: "Mr.Burger",
+        balloonContent: "Балтийский сад"
+      }     
+   
+  ];
