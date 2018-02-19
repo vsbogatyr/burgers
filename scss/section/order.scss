@@ -12,8 +12,11 @@
         bottom: 0;
         z-index: 1;
         align-items: center;
-        justify-content: center;
-        
+        justify-content: center;        
+    }
+
+    #error {
+        display: none;
     }
 
     &__modal-container {
@@ -29,7 +32,7 @@
         justify-content: center;
         top: 50%;
         left: 50%;
-        transform: translate(-50% -50%);
+        transform: translate(-50%,-50%);
     }
 
     &__modal-text {

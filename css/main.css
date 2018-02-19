@@ -1268,6 +1268,8 @@ p {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+  .order #error {
+    display: none; }
   .order__modal-container {
     width: 12.5rem;
     padding-top: 1.25rem;
@@ -1290,9 +1292,9 @@ p {
     justify-content: center;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50% -50%);
-    -ms-transform: translate(-50% -50%);
-    transform: translate(-50% -50%); }
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
   .order__modal-text {
     margin-bottom: 0.9375rem; }
 

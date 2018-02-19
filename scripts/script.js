@@ -333,41 +333,63 @@ if (isMobile) {
 //AJAX
 //console.log('in common.js');
 //console.log($);
+//const orderModal = document.querySelector('.order__modal');
+const orderModal = document.getElementById('succes');
+const orderError = document.getElementById('error');
+const errorBtn = document.getElementById('error');
+const orderModalButton = document.querySelector('.order__modal-button');
 
-var orderModal = document.querySelector('.order__modal');
+function orderMsg(form) {
+    orderModal.style.display = 'block';
+    form.trigger('reset');
+}
+
+orderModalButton.addEventListener('click', function () {
+    orderModal.style.display = 'none';
+})
+
+function error(form) {
+    orderError.style.display = 'block';
+    form.trigger('reset');
+}
+
+errorBtn.addEventListener('click', function () {
+    orderError.style.display = 'none';
+})
+
 
 $('#form').on('submit', submitForm);
 
-function submitForm (ev) {
+function submitForm(ev) {
     //console.log('in SubmitForm');
     ev.preventDefault();
 
     var form = $(ev.target),
         data = form.serialize();
-        url = form.attr('action');
-        type = form.attr('method');
+    url = form.attr('action');
+    type = form.attr('method');
 
     var request = $.ajax({
         type: type,
         url: url,
-        dataType: 'JSON',
-        data: data
+        data: data,
+        dataType: 'JSON'
     });
 
-    request.done(function(msg) {
+    request.done(function (msg) {
         var mes = msg.mes,
             status = msg.status;
-        
+
         if (status === 'OK') {
-            alert(mes);
-        }else{
-            alert(mes);
+           // alert(mes);
+           orderMsg(form);
+        } else {
+            error(form);
         }
-    });/*
+    });
     request.fail(function(jqXHR, textStatus) {
         alert("Request failed: " + textStatus);
-    });*/
-
+    });
 };
 
 ymaps.ready(init);
@@ -378,7 +400,7 @@ function init() {
         controls: ["zoomControl"],
         behaviors: ["drag"]
     });
-    placemarks.forEach(function(item) {
+    placemarks.forEach(function (item) {
         var placemark = new ymaps.Placemark(
             [item.latitude, item.longitude],
             {
@@ -386,40 +408,40 @@ function init() {
                 balloonContent: item.balloonContent
             },
             {
-                iconLayout:"default#image",
+                iconLayout: "default#image",
                 iconImageHref: "img/icons/map-marker.png",
                 iconImageSize: [46, 57],
                 iconImageOffset: [-23, -57]
             });
-            map.geoObjects.add(placemark);       
+        map.geoObjects.add(placemark);
     });
 }
 
 var placemarks = [
     {
-      latitude: 59.94587978, 
-      longitude: 30.36882832,
-      hintContent: "Mr.Burger",
-      balloonContent: "Таврический переулок, 2"
+        latitude: 59.94587978,
+        longitude: 30.36882832,
+        hintContent: "Mr.Burger",
+        balloonContent: "Таврический переулок, 2"
     },
     {
-      latitude: 59.92817677,
-      longitude:  30.34624412,
-      hintContent: "Mr.Burger",
-      balloonContent: "Достоевская, 23"
+        latitude: 59.92817677,
+        longitude: 30.34624412,
+        hintContent: "Mr.Burger",
+        balloonContent: "Достоевская, 23"
     },
     {
-      latitude: 59.92904377, 
-      longitude: 30.35684421,
-      hintContent: "Mr.Burger",
-      balloonContent: "Пушкинский сквер"
+        latitude: 59.92904377,
+        longitude: 30.35684421,
+        hintContent: "Mr.Burger",
+        balloonContent: "Пушкинский сквер"
     },
 
     {
-        latitude: 59.90810447, 
-        longitude: 30.29904974 ,
+        latitude: 59.90810447,
+        longitude: 30.29904974,
         hintContent: "Mr.Burger",
         balloonContent: "Балтийский сад"
-      }     
-   
-  ];
+    }
+
+];

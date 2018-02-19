@@ -33,7 +33,6 @@ $mail_message = '
     </ul>
 </body>
 </html>';
-echo $mail_message;
 
 $headers = "From Администратор uamvua@mail.ru>\r\n".
 "MIME-Version: 1.0" . "\r\n" .
@@ -50,7 +49,5 @@ if ($mail) {
     $data['status'] = "NO";
     $data['mes'] = "На сервере произошла ошибка";
 }
-
 echo json_encode($data);
-
 ?>
