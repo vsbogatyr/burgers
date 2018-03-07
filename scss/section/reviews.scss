@@ -1,3 +1,38 @@
+.reviews {
+    position: relative;
+    &__overlay {
+        background: rgba(47, 50, 52, 0.9);
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+
+        &-container {
+            width: rem(460px);           
+            background: #ffffff;
+            position: relative;
+            border-radius: rem(5px);
+            padding: rem(30px) rem(20px);
+        }
+
+        &-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        &-title.review__name {
+            color: #2f3234;
+        }
+    }
+
+}
+
 .reviews__list {
     width: 100%;
     height: 100%;
@@ -75,9 +110,9 @@
 
     @include tablets {
         text-align: center;
-        padding-top: rem(30px);
+       /* padding-top: rem(30px);
         padding-left: rem(50px);
-        padding-right: rem(50px);
+        padding-right: rem(50px);*/
     }
 }
 
@@ -100,6 +135,10 @@
 
     @include phones {
         font-size: rem(24px);
+    }
+
+    @include mini {
+        font-size: rem(18px);
     }
 }
 
